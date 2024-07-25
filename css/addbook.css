@@ -1,0 +1,306 @@
+* {
+  margin: 0;
+  padding: 0;
+      user-select: none;
+      
+      font-family: cursive;
+  }
+  
+  body {
+      background-color: #767f64;
+      color: #1d1705;
+  }
+
+  /* nav bar */
+  
+  nav {
+      /* background-color:  #ebeaea; */
+      background-color: #1d1705;
+      /* overflow: hidden; */
+      font-family: 'Pacifico', cursive;
+      font-size: 160%;
+      z-index: 1000;
+      /* overflow: hidden; */
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+  }
+  
+  nav .icon{
+      display: none;
+      margin-right: 5%;
+  }
+  
+  /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+  @media screen and (max-width: 600px) {
+      .topnav h4 a {display: none;}
+      .topnav a.icon {
+        float: inline-end;
+        display: block;
+      }
+    }
+    
+    /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+    @media screen and (max-width: 600px) {
+        /* .topnav.responsive {position: relative;} */
+        .topnav.responsive h4 a .icon {
+        position: fixed;
+        right: 0;
+        width: 100%;
+        top: 0;
+      }
+      .add-book{
+          padding: 1;
+      }
+      .home-img{
+          width: 100%;
+          height: auto;
+      }
+  
+      
+      /* nav h4{
+          margin-top: 2%;
+          padding: 0%;
+          display: inline;
+      } */
+      .topnav.responsive h4 a {
+        /* float: none; */
+        display: block;
+        margin: 5%;
+        text-align: left;
+      }
+  .h4a{
+      display: grid;
+      margin-top: 13%;
+  }
+    }
+  
+    
+  nav h4 {
+      float: inline-end;
+      display: block;
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      margin: 0.5%;
+      padding: 0.5%;
+      text-decoration: none;
+      position: relative;
+      z-index: 9;
+      overflow: hidden;
+      background-color: #1d1705;
+  }
+  
+  nav h4::after {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background-color: #767f64;
+      left: 0;
+      bottom: -100%;
+      border-radius: 50%;
+      transition: all ease 0.7s;
+  }
+  
+  nav h4:hover a {
+      color: white;
+  }
+  
+  nav h4:hover::after {
+      bottom: 0;
+      border-radius: 0;
+  }
+  
+  nav h4 a {
+      text-decoration: none;
+      color: rgb(245, 245, 245);
+      position: relative;
+      z-index: 9;
+  }
+  
+  nav h1 {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      /* padding: 5px 16px; */
+      text-decoration: none;
+      /* border-radius: 50%; */
+      margin: 1%;
+      font-size: 80%;
+  }
+  
+  nav h1:hover {
+      rotate: -5deg;
+      /* font-size: ; */
+  }
+  
+  .btn {
+      width: 20%;
+      height: auto;
+      float: right;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 1%;
+      border: none;
+      border-radius: 50%;
+      margin: 2%;
+      background-color: #767f64;
+      cursor: pointer;
+  
+  }
+  
+  nav button:hover {
+      background-color: #9aa18c;
+      color: black;
+  }
+
+
+
+
+  form {
+    max-width: 400px;
+    margin: 100px auto;
+    background-color: #1d1705;
+    padding: 20px;
+    color: rgb(255, 255, 255);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-weight: bolder;
+    font-size: 25px;
+  }
+
+  label, input, button {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  input {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  /* button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+  } */
+
+  /* #booksContainer {
+    margin-top: 20px;
+  } */
+
+  /* .book {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+
+  .book img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-top: 10px;
+  }
+
+  #bookImage{
+    background-color: #fff;
+    color: #1d1705;
+    cursor: pointer;
+  }
+   */
+
+  .form-btn {
+    display: block;
+    color:#1d1705;
+    text-align: center;
+    padding: 15px 16px;
+    text-decoration: none;
+    border-radius: 50px;
+    margin: 7px;
+    position: relative;
+    z-index: 9;
+    overflow: hidden;
+    background-color:#767f64;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.form-btn::after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color:#ffffff;
+    left: 0;
+    bottom: -100%;
+    border-radius: 50%;
+    transition: all ease 0.7s;
+}
+
+.form-btn:hover a {
+    color: rgb(5, 5, 5);
+}
+
+.form-btn:hover::after {
+    bottom: 0;
+    border-radius: 0;
+}
+
+.form-btn a {
+    text-decoration: none;
+    color: rgb(245, 245, 245);
+    position: relative;
+    z-index: 9;
+}
+
+.booksdiv{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #fffcfc;
+  border-radius: 5px;
+  font-size: 20px;
+  color: #ffffff;
+  background-color:#1d1705;
+}
+
+.book{
+  background-color:#767f64;
+  margin: 30px;
+  border: 5px solid rgb(255, 248, 248);
+  padding: 40px;
+  height: auto;
+  max-width: 200px;
+  box-shadow: 0 5px 10px 5px #767f64;
+}
+.book img {
+  max-width: 100px; 
+  height: auto; 
+  border-radius: 5px;
+  
+}
+
+
+.book:hover{
+transform: scale(1.03);
+}
+
+
+.book b{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #1d1705;
+}

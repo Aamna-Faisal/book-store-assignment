@@ -1,0 +1,649 @@
+* {
+margin: 0;
+padding: 0;
+    user-select: none;
+    font-family: 'Pacifico', cursive;
+
+}
+
+body {
+    background-color: #767f64;
+    color: #1d1705;
+}
+
+nav {
+    /* background-color:  #ebeaea; */
+    background-color: #1d1705;
+    /* overflow: hidden; */
+    font-family: 'Pacifico', cursive;
+    font-size: 160%;
+    z-index: 1000;
+    /* overflow: hidden; */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+nav .icon{
+    display: none;
+    margin-right: 5%;
+}
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 600px) {
+    .topnav h4 a {display: none;}
+    .topnav a.icon {
+      float: inline-end;
+      display: block;
+    }
+  }
+  
+  /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+  @media screen and (max-width: 600px) {
+      /* .topnav.responsive {position: relative;} */
+      .topnav.responsive h4 a .icon {
+      position: fixed;
+      right: 0;
+      width: 100%;
+      top: 0;
+    }
+    .add-book{
+        padding: 1;
+    }
+    .home-img{
+        width: 100%;
+        height: auto;
+    }
+
+    
+    /* nav h4{
+        margin-top: 2%;
+        padding: 0%;
+        display: inline;
+    } */
+    .topnav.responsive h4 a {
+      /* float: none; */
+      display: block;
+      margin: 5%;
+      text-align: left;
+    }
+.h4a{
+    display: grid;
+    margin-top: 13%;
+}
+  }
+
+  
+nav h4 {
+    float: inline-end;
+    display: block;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    margin: 0.5%;
+    padding: 0.5%;
+    text-decoration: none;
+    position: relative;
+    z-index: 9;
+    overflow: hidden;
+    background-color: #1d1705;
+}
+
+nav h4::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #767f64;
+    left: 0;
+    bottom: -100%;
+    border-radius: 50%;
+    transition: all ease 0.7s;
+}
+
+nav h4:hover a {
+    color: white;
+}
+
+nav h4:hover::after {
+    bottom: 0;
+    border-radius: 0;
+}
+
+nav h4 a {
+    text-decoration: none;
+    color: rgb(245, 245, 245);
+    position: relative;
+    z-index: 9;
+}
+
+nav h1 {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    /* padding: 5px 16px; */
+    text-decoration: none;
+    /* border-radius: 50%; */
+    margin: 1%;
+    font-size: 80%;
+}
+
+nav h1:hover {
+    rotate: -5deg;
+    /* font-size: ; */
+}
+
+.btn {
+    width: 20%;
+    height: auto;
+    float: right;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 1%;
+    border: none;
+    border-radius: 50%;
+    margin: 2%;
+    background-color: #767f64;
+    cursor: pointer;
+
+}
+
+nav button:hover {
+    background-color: #9aa18c;
+    color: black;
+}
+.wel{
+    margin: 70px 0px 200px 0px;
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+
+.home-img {
+    float: left;
+    margin: 2% 2% 5% 2%;
+    border-radius: 50%;
+    /* z-index: 50; */
+}
+
+.welcome-head {
+    /* font-size: 70px; */
+    /* margin-top: 50px; */
+    font-family: 'Pacifico', cursive;
+    margin: 1%;
+    text-align: center;
+    display: inline-block;
+    overflow: hidden;
+    /* border-right: 1px solid; */
+    border-radius: 10%;
+    white-space: nowrap;
+    /* margin: 0 auto; */
+    /* margin-top: auto; */
+    /* padding: 13vh 0vh 0vh 0vh; */
+    animation: typing 5.5s,
+    blink-caret 0.5s step-end infinite;
+    font-size: 300%;
+    /* margin-top: 0%; */
+    /* padding: 6% 0% 1% 0%; */
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 30%
+    }
+}
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: rgb(26, 25, 25)
+    }
+}
+
+.para {
+    font-size: 150%;
+    padding:1%;
+    margin: 0%;
+}
+
+.wel-container{
+    text-align: center;
+}
+
+
+.add-book {
+    float: inline-start;
+    display: block;
+    font-size: 100%;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    /* width: 121px; */
+    border-radius: 50%;
+    border: none;
+    margin-left: 20%;
+    position: relative;
+    z-index: 9;
+    overflow: hidden;
+    background-color: #1d1705;
+    cursor: pointer;
+    
+}
+
+.add-book::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #eee9e9;
+    left: 0;
+    bottom: -100%;
+    border-radius: 50%;
+    transition: all ease 0.7s;
+}
+
+.add-book:hover a {
+    color: rgb(17, 17, 17);
+}
+
+.add-book:hover::after {
+    bottom: 0;
+    border-radius: 0;
+}
+
+.add-book a {
+    text-decoration: none;
+    color: rgb(245, 245, 245);
+    position: relative;
+    z-index: 9;
+}
+
+
+
+
+
+#open-popup {
+    margin: auto;
+    color: aliceblue;
+    /* position: fixed; */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    /* background-color: rgba(49, 43, 43, 0.432);  */
+}
+
+.pop-content {
+    font-size: 100%;
+    padding: 5%;
+    background-color: #000000cb;
+    position: absolute;
+    top: 50%;
+    border-radius: 50%;
+    /* height: 25%; */
+    /* width: 25%; */
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.popuplogin-btn {
+    font-size: 100%;
+    float: inline-end;
+    display: block;
+    /* font-size: 20px; */
+    color: rgb(7, 7, 7);
+    text-align: center;
+    padding: 7%;
+    text-decoration: none;
+    border-radius: 50%;
+    border: none;
+    margin: 5%;
+    position: relative;
+    z-index: 9;
+    overflow: hidden;
+    background-color:#767f64;
+    cursor: pointer;
+    
+}
+
+.popuplogin-btn::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color:#1d1705;
+    left: 0;
+    bottom: -100%;
+    border-radius: 50%;
+    transition: all ease 0.7s;
+}
+
+.popuplogin-btn:hover a {
+    color: rgb(250, 249, 249);
+}
+
+.popuplogin-btn:hover::after {
+    bottom: 0;
+    border-radius: 0;
+}
+
+.popuplogin-btn a {
+    text-decoration: none;
+    color: rgb(245, 245, 245);
+    position: relative;
+    z-index: 9;
+}  
+      @media screen and (max-width: 600px) {
+        .book{
+            min-width: 225px;
+        }
+      }
+
+
+.booksdiv{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5%;
+    justify-content: center;
+    margin: 0.5%;
+    padding: 1%;
+    border: 2px solid #fffcfc;
+    border-radius: 1%;
+    /* font-size: 100%; */
+    color: #ffffff;
+    background-color:#1d1705;
+    /* min-width: 15%; */
+}
+
+.book{
+    background-color:#767f64;
+    flex-grow: 1;
+    margin: 3%;
+    border: 5px solid rgb(255, 248, 248);
+    padding: 3%;
+    height: auto;
+    max-width: 13%;
+    box-shadow: 0 5px 10px 5px #767f64;
+}
+.book h3{
+    color: #1d1705;
+    font-weight: bolder;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 180%;
+    text-decoration: underline;
+}
+.book img {
+    max-width: 60%; 
+    height: auto; 
+    margin-top: 2%;
+    border-radius: 3%;
+    box-shadow: 0 5px 10px 5px #000000a2;
+    
+}
+
+
+.book:hover{
+    transform: scale(1.03);
+}
+
+.book b{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #1d1705;
+}
+
+
+#scroller{
+    /* background-color: red; */
+    white-space:nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 10;
+}
+
+#scroller::-webkit-scrollbar{
+    display: none;
+}
+
+#scroller-in{
+    white-space:nowrap;
+    display: inline-block;
+    animation: scroll;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+#scroller h4{
+    display: inline-block;
+    font-size: 12vh;
+    font-weight: 900;
+    font-family: ginroy;
+    margin: 0.5%;
+    color: transparent;
+    -webkit-text-stroke: 2px rgb(255, 255, 255);
+    transition: all linear 1s;
+}
+#scroller h4:hover{
+    color: #1d1705;
+}
+
+@keyframes scroll {
+    from{
+        transform: translate(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+
+/* body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+} */
+
+  .container {
+    /* max-width: 800px; */
+    margin: 5% auto;
+    /* background-color: #fff; */
+    padding: 2%;
+    text-align: center;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+  }
+  
+  /* .About-head {
+      text-align: center;
+      margin-bottom: 20px;
+      color:#1d1705;
+      font-size: 36px;
+      text-decoration: underline;
+    } */
+
+    .About-head span {
+        text-shadow: 8px 8px 16px rgba(0, 0, 0, 0.5);
+        font-family: ginroy;
+        color: #fff8f7;
+        -webkit-text-stroke: 1px rgb(14, 13, 13);
+        font-size: 300%;
+    }
+    
+    .container p {
+    margin-bottom: 1%;
+    font-size: 130%;
+}
+
+.experience,
+.mission {
+    margin-top: 2%;
+}
+
+.container h2{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration:underline ;
+    font-size: 200%;
+}
+
+#background-video {
+    /* position: relative; */
+    border-radius: 5%;
+    /* margin: auto; */
+    /* top: 0;
+    left: 0; */
+    /* width: 95%; */
+    /* height: 50%; */
+    /* object-fit: cover;  */
+    z-index: -1;
+    padding: 1%;
+    border: 5px solid #1d1705;
+    
+}
+
+
+.vid {
+    /* padding: 0%; */
+    border-radius: 2%;
+    /* margin-top: 20%; */
+    border: 5px solid #1d1705;
+    width: 95%; 
+    height: auto; 
+    display: flex;
+    padding: 1%;
+    margin: auto;
+}
+
+.video-container {
+    width: 40%; 
+    position: relative;
+    margin: auto;
+    /* overflow: hidden; */
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+}
+
+.text-overlay{
+    margin: 1%;
+    color: #fff8f7;
+}
+
+
+.text-overlay h1{
+    font-family: ginroy;
+    
+}
+
+
+.contact-content a {
+    text-decoration: none;
+    padding: 2%;
+    transition: 0.3s ease-in-out;
+    color: #eee9e9;
+}
+
+#contact{
+    border-radius: 50%;
+    border: 5px solid #fff8f7;
+    background-color: #1d1705;
+    color: #fdfcf9;
+    margin: auto;
+    width: 90%;
+}
+  
+/* @media only screen and (max-width: 768px) {
+    nav {
+          flex-direction: column;
+        }
+    
+        .menu-icon {
+            display: block;
+        }
+        
+        h4 {
+            display: none;
+        }
+        
+        h4 a {
+            display: none;
+        }
+        
+        .btn {
+            font-size: 10px;
+        }
+        
+        #open-popup {
+            margin: 20% 20% 20% 20%;
+        }
+    } */
+    /* @media only screen and (max-width: 768px) {
+        
+        nav h4,
+        nav h1,
+        .btn {
+            font-size: 5vw;
+            padding: 2% 2%;
+        }
+    } */
+    
+    /* .menu-icon {
+        display: none;
+        cursor: pointer;
+        font-size: 2em;
+        color: white;
+        position: fixed;
+        @media only screen and (max-width: 768px) {
+            .home-img {
+                width: 280px;
+                height: 245px;
+                margin: 26% 10% 0% 10%;
+                border-radius: 13%;
+            }
+            
+            .welcome-head {
+                font-size: 6vw;
+                margin: 12% 0% 0% 0%;
+                padding: 0px 30px 0px 30px;
+            }
+        
+            .para {
+                font-size: 3vw;
+            }
+        
+            .add-book {
+                margin: 2% 3%;
+                font-size: 10px;
+                padding: 9px;
+            }
+        }
+    } */
+        @media screen and (max-width: 600px) {
+            .vid{
+                display: grid;
+                width: 80%;
+            }
+            .video-container{
+                width: 80%;
+            }
+           
+        }

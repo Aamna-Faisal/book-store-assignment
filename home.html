@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/home.css">
+  <title>BOOKISH BOULEVARD</title>
+</head>
+
+<body>
+  <div id="home">
+    <nav class="topnav" id="myTopnav">
+      <h1>Bookish Boulevard</h1>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <img src="img/icons8-hamburger-menu-50.png" alt="">
+      </a>
+      <div class="h4a">
+      <h4> <a href="" id="signoutbutton">Sign Out</a></h4>
+      <!-- <button class="btn" id="signoutbutton" type="button">Sign Out</button> -->
+      <!-- <button class="btn btn-outline-success menu-icon" id="menu-icon" type="button">&#9776;</button> -->
+      <h4><a href="#contact">Contact</a></h4>
+      <h4><a href="#booksContainer">books</a></h4>
+      <h4><a href="#page2">About</a></h4>
+      <h4><a href="#home">Home</a></h4></div>
+    </nav>
+  </div>
+  <div>
+    <div class="wel">
+      <!-- <h1>Bookish Boulevard</h1> -->
+      <img src="img/henry-be-lc7xcWebECc-unsplash.jpg" height="500px" width="50%" class="home-img">
+      <div class="wel-container">
+        <h1 class="welcome-head">Welcome To <br> Our Book store!</h1>
+        <p class="para">Bookish boulivard provides you the best solution to buy or sell books online in
+          Pakistan at single click. we only deals in original books with competitive rates. So, what
+          are you waiting for? try our books or sell yours!</p>
+        <h5 class="add-book" id="addBook"><a href="#">ADD BOOK</a></h5>
+      </div>
+      <div id="open-popup"></div>
+    </div>
+
+    <div class="vid">
+      <div class="video-container">
+        <video id="background-video" autoplay muted loop>
+          <source src="img/library.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="text-overlay">
+          <h1>HEAVEN OF BOOKS</h1>
+        </div>
+      </div>
+      <div class="video-container">
+        <video id="background-video" autoplay muted loop>
+          <source src="img/books.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="text-overlay">
+          <h1>EXPLORE THE NEW BOOKS</h1>
+        </div>
+      </div>
+    </div>
+
+    <br><br><br>
+    <div id="page2">
+      <div id="scroller">
+        <div id="scroller-in">
+          <h4>UNLEASH YOUR IMAGINATION</h4>
+          <h4>AND DISCOVER THE MAGIC OF</h4>
+          <h4>BOOKS AT OUR</h4>
+          <h4>BOOKISH BOULEVARD</h4>
+          <h4>FOR BOOK LOVERS.</h4>
+        </div>
+        <div id="scroller-in">
+          <h4>UNLEASH YOUR IMAGINATION</h4>
+          <h4>AND DISCOVER THE MAGIC OF</h4>
+          <h4>BOOKS AT OUR</h4>
+          <h4>BOOKISH BOULEVARD</h4>
+          <h4>FOR BOOK LOVERS.</h4>
+        </div>
+      </div>
+      <div class="container">
+        <h1 class="About-head"><span>About us</span></h1>
+
+        <section class="about">
+          <p>A haven for bibliophiles and the curious-minded.</p>
+          <p>Curated with care, our collection spans genres, from timeless classics to contemporary treasures.</p>
+        </section>
+
+        <section class="experience">
+          <h2>Our Experience</h2>
+          <p>Established in 1975, we have been on a journey to bring the joy of reading to book enthusiasts.</p>
+          <p>Our shelves tell a story of discovery, where each book has been chosen to captivate and inspire.</p>
+        </section>
+
+        <section class="mission">
+          <h2>Our Mission</h2>
+          <p>We believe in the magic of storytelling and strive to create a community of readers who share a deep
+            appreciation for the written word.</p>
+          <p>At <span>BOOKISH BAULEVARD</span>, our mission is to inspire, entertain, and connect people through the
+            power of books.</p>
+        </section>
+      </div>
+    </div>
+
+
+    <!-- <div id="services"></div> -->
+    <div class="booksdiv" id="booksContainer"></div>
+    <div id="contact">
+      <div class="container">
+        <div class="contact-content">
+          <h2>Contact Me</h2>
+          <p class="mail">
+            Get in touch with me <i class="fas fa-arrow-right"></i>
+            <a href="aamnafaisal152@gmail.com">aamnafaisal152@gmail.com</a>
+          </p>
+          <p class="links">Or find me on:</p>
+          <a href="https://www.linkedin.com/in/aamna-faisal-388632254/" target="blank"><img src="img/linkedin.png"
+              alt=""></a>
+          
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
+    import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-database.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDuh6CzOMboFT003om_1CXxO1KjGCgCrfQ",
+      authDomain: "book-store-44af3.firebaseapp.com",
+      databaseURL: "https://book-store-44af3-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "book-store-44af3",
+      storageBucket: "book-store-44af3.appspot.com",
+      messagingSenderId: "788849686364",
+      appId: "1:788849686364:web:c9b923817877e4dde87399"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+
+    // Reference to the 'books' node in the database
+    const booksRef = ref(database, 'books');
+
+    // Reference to the container where books will be displayed
+    const booksContainer = document.getElementById('booksContainer');
+
+    // Listen for changes in the 'books' node
+    onValue(booksRef, (snapshot) => {
+      // Clear previous content
+      booksContainer.innerHTML = '';
+
+      // Loop through each book in the snapshot
+      snapshot.forEach((childSnapshot) => {
+        const bookData = childSnapshot.val();
+
+        // Create a div element for each book
+        const bookDiv = document.createElement('div');
+        bookDiv.classList.add('book');
+        bookDiv.innerHTML = `
+          <div class="book-details">
+            <h3>${bookData.bookTitle}</h3>
+            <p><b>Author:</b> ${bookData.authorName}</p>
+            <p><b>Price:</b> ${bookData.bookPrice}RS</p>
+            <img src="${bookData.imageUrl}" alt="${bookData.bookTitle} cover">
+            <hr>
+            </div>
+          `;
+
+        // Append the book div to the books container
+        booksContainer.appendChild(bookDiv);
+      });
+    });
+
+    let SignoutBtn = document.getElementById('signoutbutton');
+    let Signout = () => {
+      sessionStorage.removeItem("user-creds");
+      sessionStorage.removeItem("user-info");
+      // window.location.href = 'login.html';
+      alert("you have been signed out succesfully")
+    }
+    SignoutBtn.addEventListener('click', Signout);
+
+  </script>
+
+
+  <script src="js/home.js"></script>
+</body>
+
+</html>

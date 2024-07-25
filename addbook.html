@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <title>ADD BOOK||BOOKISH BOULEVARD</title>
+  <link rel="stylesheet" href="css/addbook.css">
+</head>
+<style>
+  form {
+    background: url('img/image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-attachment: unset;
+    /* background: inherit;
+    backdrop-filter: blur(10px); */
+  }
+</style>
+
+<body>
+
+  <div id="home">
+    <nav class="topnav" id="myTopnav">
+      <h1>Bookish Boulevard</h1>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <img src="img/icons8-hamburger-menu-50.png" alt="">
+      </a>
+      <div class="h4a">
+        <!-- <h4> <a href="" id="signoutbutton">Sign Out</a></h4> -->
+        <!-- <button class="btn" id="signoutbutton" type="button">Sign Out</button> -->
+        <!-- <button class="btn btn-outline-success menu-icon" id="menu-icon" type="button">&#9776;</button> -->
+        <h4><a href="home.html">Contact</a></h4>
+        <h4><a href="home.html">books</a></h4>
+        <h4><a href="home.html">About</a></h4>
+        <h4><a href="home.html">Home</a></h4>
+      </div>
+    </nav>
+  </div>
+
+  <form id="bookForm">
+    <label for="authorName">Author Name:</label>
+    <input type="text" id="authorName" required>
+
+    <label for="bookTitle">Book Title:</label>
+    <input type="text" id="bookTitle" required>
+
+    <label for="bookPrice">Book Price:</label>
+    <input type="number" id="bookPrice" required>
+
+    <label for="bookImage">Upload Image:</label>
+    <input type="file" id="bookImage" accept="image/*" required>
+    <h4 class="form-btn" id="Submit"><a href="#">Add My Book</a></h4>
+  </form>
+
+  <div class="booksdiv" id="booksContainer"></div>
+
+  <script src="js/addbook.js"></script>
+
+  <script type="module">
+
+    
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
+    import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-database.js";
+    import { getStorage, ref as storageRef, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-storage.js";
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyDuh6CzOMboFT003om_1CXxO1KjGCgCrfQ",
+      authDomain: "book-store-44af3.firebaseapp.com",
+      databaseURL: "https://book-store-44af3-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "book-store-44af3",
+      storageBucket: "book-store-44af3.appspot.com",
+      messagingSenderId: "788849686364",
+      appId: "1:788849686364:web:c9b923817877e4dde87399"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+    const storage = getStorage(app);
+
+    const formbtn = document.getElementById('Submit');
+    formbtn.addEventListener('click', () => {
+      const booksContainer = document.getElementById('booksContainer');
+      const authorName = document.getElementById('authorName').value;
+      const bookTitle = document.getElementById('bookTitle').value;
+      const bookPrice = document.getElementById('bookPrice').value;
+      const bookImage = document.getElementById('bookImage').files[0];
+
+      if (authorName === "" || bookTitle === "" || bookPrice === "" || bookImage === "") {
+        alert("Fill the full form to add the book");
+      } else {
+        const bookDiv = document.createElement('div');
+        bookDiv.classList.add('book');
+        bookDiv.innerHTML = `
+          <h3>${bookTitle}</h3>
+          <p><b>Author:</b> ${authorName}</p>
+          <p><b>Price:</b> ${bookPrice}</p>
+          <img src="${URL.createObjectURL(bookImage)}" alt="${bookTitle} cover">
+          <hr>
+        `;
+        booksContainer.appendChild(bookDiv);
+
+        const newBookKey = push(ref(database, 'books')).key;
+
+        // Upload the book image to Firebase Storage
+        const imageRef = storageRef(storage, `bookImages/${newBookKey}`);
+        uploadBytes(imageRef, bookImage).then((snapshot) => {
+          getDownloadURL(snapshot.ref).then((downloadURL) => {
+            // Save book details to the Realtime Database
+            const bookDetails = {
+              authorName: authorName,
+              bookTitle: bookTitle,
+              bookPrice: bookPrice,
+              imageUrl: downloadURL
+            };
+
+            // Use the 'set' function to set the book details at the specified reference
+            set(ref(database, `books/${newBookKey}`), bookDetails).then(() => {
+              // Reset the form after successful submission
+              document.getElementById('bookForm').reset();
+              console.log('Book added successfully!');
+            }).catch((error) => {
+              console.error('Error saving book details:', error);
+            });
+          });
+        }).catch((error) => {
+          console.error('Error uploading image to Firebase Storage:', error);
+        });
+      }
+    });
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,260 @@
+* {
+    margin: 0;
+    padding: 0;
+        user-select: none;
+        
+        font-family: cursive;
+    }
+    
+    body {
+        background-color: #767f64;
+        color: #1d1705;
+    }
+
+    /* nav bar */
+    
+    nav {
+        /* background-color:  #ebeaea; */
+        background-color: #1d1705;
+        /* overflow: hidden; */
+        font-family: 'Pacifico', cursive;
+        font-size: 160%;
+        z-index: 1000;
+        /* overflow: hidden; */
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+    }
+    
+    nav .icon{
+        display: none;
+        margin-right: 5%;
+    }
+    
+    /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+    @media screen and (max-width: 600px) {
+        .topnav h4 a {display: none;}
+        .topnav a.icon {
+          float: inline-end;
+          display: block;
+        }
+      }
+      
+      /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+      @media screen and (max-width: 600px) {
+          /* .topnav.responsive {position: relative;} */
+          .topnav.responsive h4 a .icon {
+          position: fixed;
+          right: 0;
+          width: 100%;
+          top: 0;
+        }
+        .add-book{
+            padding: 1;
+        }
+        .home-img{
+            width: 100%;
+            height: auto;
+        }
+    
+        
+        /* nav h4{
+            margin-top: 2%;
+            padding: 0%;
+            display: inline;
+        } */
+        .topnav.responsive h4 a {
+          /* float: none; */
+          display: block;
+          margin: 5%;
+          text-align: left;
+        }
+    .h4a{
+        display: grid;
+        margin-top: 13%;
+    }
+      }
+    
+      
+    nav h4 {
+        float: inline-end;
+        display: block;
+        color: white;
+        border-radius: 50%;
+        text-align: center;
+        margin: 0.5%;
+        padding: 0.5%;
+        text-decoration: none;
+        position: relative;
+        z-index: 9;
+        overflow: hidden;
+        background-color: #1d1705;
+    }
+    
+    nav h4::after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: #767f64;
+        left: 0;
+        bottom: -100%;
+        border-radius: 50%;
+        transition: all ease 0.7s;
+    }
+    
+    nav h4:hover a {
+        color: white;
+    }
+    
+    nav h4:hover::after {
+        bottom: 0;
+        border-radius: 0;
+    }
+    
+    nav h4 a {
+        text-decoration: none;
+        color: rgb(245, 245, 245);
+        position: relative;
+        z-index: 9;
+    }
+    
+    nav h1 {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        /* padding: 5px 16px; */
+        text-decoration: none;
+        /* border-radius: 50%; */
+        margin: 1%;
+        font-size: 80%;
+    }
+    
+    nav h1:hover {
+        rotate: -5deg;
+        /* font-size: ; */
+    }
+    
+    .btn {
+        width: 20%;
+        height: auto;
+        float: right;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 1%;
+        border: none;
+        border-radius: 50%;
+        margin: 2%;
+        background-color: #767f64;
+        cursor: pointer;
+    
+    }
+    
+    nav button:hover {
+        background-color: #9aa18c;
+        color: black;
+    }
+
+
+    /* form designing */
+    .form{
+        font-family: Arial, sans-serif;
+        background-color: #767f64;
+        margin-top: 65px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+
+    }
+
+    /* body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      } */
+  
+
+      form {
+        background-color: #0c0c0c;
+        color: #fff;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+        box-sizing: border-box;
+        text-align: center;
+      }
+  
+      input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+        border: 3px solid #7e6f6f;
+        border-radius: 4px;
+      }
+  
+      .signup-btn {
+        width: 50%;
+        padding: 10px;
+        background-color: #767f64;
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+  
+      .signup-btn:hover {
+        background-color: #545554;
+      }
+  
+      .error-message {
+        color: red;
+        margin-bottom: 10px;
+      }
+
+      .link-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+      }
+
+      .link-container a{
+        color: #767f64;
+      }
+  
+      .social-buttons {
+        display: flex;
+        /* justify-content: space-between; */
+        margin-top: 10px;
+        justify-content: center;
+      }
+  
+      .social-button {
+        width: 38%;
+        padding: 8px;
+        /* background-color: #3b5998; Facebook color */
+        color: #fff;
+        border: none;
+        border-radius: 40px;
+        cursor: pointer;
+      }
+  
+      .social-button.google {
+        background-color: #dd4b39;
+      }
+  
+      /* .social-button.github {
+        background-color: #333;  */

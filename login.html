@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/home.css">
+  <title>login| bookish boulevard</title>
+  <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+  <div id="home">
+    <nav class="topnav" id="myTopnav">
+      <h1>Bookish Boulevard</h1>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <img src="img/icons8-hamburger-menu-50.png" alt="">
+      </a>
+      <div class="h4a">
+      <!-- <h4> <a href="" id="signoutbutton">Sign Out</a></h4> -->
+      <!-- <button class="btn" id="signoutbutton" type="button">Sign Out</button> -->
+      <!-- <button class="btn btn-outline-success menu-icon" id="menu-icon" type="button">&#9776;</button> -->
+      <h4><a href="home.html">Contact</a></h4>
+      <h4><a href="home.html">books</a></h4>
+      <h4><a href="home.html">About</a></h4>
+      <h4><a href="home.html">Home</a></h4></div>
+    </nav>
+  </div>
+
+  <div class="form">
+    <form id="signup-form">
+      <h2>LOG IN</h2>
+      <div id="error-message" class="error-message"></div>
+      <!-- <label for="username">Full Name:</label>
+      <input type="text" id="username" name="username" required> -->
+  
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+  
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+<!--   
+      <label for="confirm-password">Confirm Password:</label>
+      <input type="password" id="confirm-password" name="confirm-password" required> -->
+  
+      <!-- <div class="link-container">
+        <a href="#">Forgot Password?</a>
+      </div> -->
+      <button id="login-btn" class="signup-btn" onclick="validateForm()" type="button">LOG IN</button>
+      <div class="link-container">
+        <span>Don't have an account? <a href="register.html">Create an account</a></span>
+      </div>
+
+      <h4>or continue with</h4>
+      <div class="social-buttons">
+        <!-- <button class="social-button">Facebook</button> -->
+        <button id="google-btn" class="social-button google">Google</button>
+        <!-- <button class="social-button github">GitHub</button> -->
+      </div>
+  
+    
+    </form>
+  </div>
+
+
+  <script src="js/login.js" type="module"></script>
+
+  <script>
+//responsive function
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+
+
+  function validateForm() {
+      // var username = document.getElementById('username').value;
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('password').value;
+      // var confirmPassword = document.getElementById('confirm-password').value;
+      var errorMessage = document.getElementById('error-message');
+
+      // Simple validation
+      if (email.trim() === '' || password.trim() === '') {
+        errorMessage.textContent = 'All fields are required';
+        return;
+      }
+
+    }
+
+
+
+
+//sign out creds
+    //   let SignoutBtn = document.getElementById('signoutbutton');
+    // let Signout = () => {
+    //   sessionStorage.removeItem("user-creds");
+    //   sessionStorage.removeItem("user-info");
+    //   // window.location.href = 'login.html';
+    //   alert("you have been signed out succesfully")
+    // }
+    // SignoutBtn.addEventListener('click', Signout);
+  </script>
+</body>
+</html>
